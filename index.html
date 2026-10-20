@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI in Action · Lab2dev | 11 de novembro</title>
+<meta name="description" content="AI in Action: do dado à decisão. Em uma manhã na Lab2dev, monte o agente de IA do seu negócio com demo ao vivo, oficina em mesa e troca entre executivos. 11 de novembro, das 9h às 12h30.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Icon sprite (mesmo traço da página Code Advisor) -->
+<svg style="display:none" aria-hidden="true">
+  <defs>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.3-6-10.5A6 6 0 0118 10.5C18 15.7 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9" r="2.4"/><path d="M15.6 14.2c2.6.3 4.4 2.5 4.4 5.3"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.8l5 3.2-5 3.2z"/></symbol>
+    <symbol id="i-table" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="4" rx="1.2"/><path d="M7 12v7M17 12v7"/><circle cx="8" cy="5" r="1.4"/><circle cx="16" cy="5" r="1.4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 6h10a2 2 0 012 2v5a2 2 0 01-2 2H10l-4 3v-3H5a2 2 0 01-2-2V8a2 2 0 012-2z"/><path d="M17 10h2a2 2 0 012 2v4a2 2 0 01-2 2h-1v2.5L15.5 18"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.4"/></symbol>
+    <symbol id="i-rule" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></symbol>
+    <symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6"/><path d="M5 12v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3l9-16z"/><path d="M12 10v4"/><circle cx="12" cy="17" r=".6" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-owner" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></symbol>
+    <symbol id="i-lock"viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></symbol>
+  </defs>
+</svg>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="brand-row">
+      <img class="partner-badge" src="assets/sap-gold-partner.svg" alt="SAP Gold Partner" width="98" height="57">
+      <a href="#top" class="brand-lockup" aria-label="Lab2dev, AI in Action">
+        <img class="brand-logo" src="assets/lab2dev-logo.svg" alt="lab2dev">
+        <span class="brand-divider"></span>
+        <span class="brand-product">AI in Action</span>
+      </a>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#agente">O que você constrói</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#anfitrioes">Palestrante</a>
+      <a href="#lab2dev">Lab2dev</a>
+      <a class="btn btn-primary" href="#inscricao">Garantir minha vaga</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+      <svg class="icon"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== HERO: convite + ingresso ===== -->
+  <section class="invite">
+    <div class="invite-bg" aria-hidden="true"></div>
+    <div class="wrap invite-grid">
+      <div class="invite-copy">
+        <h1 class="invite-title">
+          <span class="w" style="--i:0">AI</span>
+          <span class="w" style="--i:1">in</span>
+          <span class="w hl-purple" style="--i:2">Action</span>
+        </h1>
+        <p class="invite-sub hero-in" style="--d:450ms">
+          <strong>Do dado à decisão:</strong> monte o agente de IA do seu negócio em uma manhã.
+        </p>
+        <div class="invite-actions hero-in" style="--d:560ms">
+          <a href="#inscricao" class="btn btn-primary">
+            Garantir minha vaga
+            <svg class="icon icon-sm"><use href="#i-arrow"/></svg>
+          </a>
+          <a href="#agenda" class="btn btn-ghost">Ver a agenda</a>
+        </div>
+      </div>
+
+      <aside class="ticket ticket-hero" aria-label="Resumo do evento">
+        <div class="ticket-paper">
+        <div class="ticket-stub">
+          <span class="ticket-day">11</span>
+          <span class="ticket-month">nov</span>
+          <span class="ticket-weekday">quarta-feira</span>
+        </div>
+        <div class="ticket-body">
+          <p class="ticket-name">AI in Action</p>
+          <ul class="ticket-facts">
+            <li><svg class="icon"><use href="#i-clock"/></svg><span><strong>9h às 12h30</strong>Recepção a partir das 8h30</span></li>
+            <li><svg class="icon"><use href="#i-pin"/></svg><span><strong>Presencial, na Lab2dev</strong>Av. Hilário Pereira de Souza, 406, Torre 02, 27º andar, Osasco</span></li>
+            <li><svg class="icon"><use href="#i-lock"/></svg><span><strong>Vagas limitadas</strong>Inscrição sujeita a confirmação</span></li>
+          </ul>
+        </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== O AGENTE: frase com 5 lacunas ===== -->
+  <section class="section" id="agente">
+    <div class="wrap">
+      <div class="agent-head reveal">
+        <h2>Você sai com um agente desenhado, <span class="hl-purple">não só com a ideia.</span></h2>
+        <p>Na oficina, cada mesa trabalha um problema real do próprio negócio e responde a cinco perguntas. São elas que transformam conceito em agente.</p>
+      </div>
+
+      <div class="spec reveal" style="--delay:80ms">
+        <p class="spec-lead">
+          Um agente que ataca <span class="kw" data-kw="0">uma dor real</span>, segue
+          <span class="kw" data-kw="1">uma regra clara</span>, usa <span class="kw" data-kw="2">o dado certo</span>,
+          conhece <span class="kw" data-kw="3">o custo do erro</span> e tem
+          <span class="kw" data-kw="4">um dono do resultado</span>.
+        </p>
+        <ul class="spec-grid">
+          <li class="spec-item" data-kw="0" tabindex="0">
+            <svg class="icon"><use href="#i-target"/></svg>
+            <h3>Qual dor atacar</h3>
+            <p>Um problema que hoje custa tempo, dinheiro ou decisão, e que vale resolver primeiro.</p>
+          </li>
+          <li class="spec-item" data-kw="1" tabindex="0">
+            <svg class="icon"><use href="#i-rule"/></svg>
+            <h3>Que regra ele segue</h3>
+            <p>Os critérios, os limites e as exceções que o agente precisa respeitar.</p>
+          </li>
+          <li class="spec-item" data-kw="2" tabindex="0">
+            <svg class="icon"><use href="#i-data"/></svg>
+            <h3>De que dado precisa</h3>
+            <p>Quais informações ele consulta, onde estão e se dá para confiar nelas.</p>
+          </li>
+          <li class="spec-item" data-kw="3" tabindex="0">
+            <svg class="icon"><use href="#i-alert"/></svg>
+            <h3>Quanto custa o erro</h3>
+            <p>Onde o agente age sozinho e onde pede validação humana.</p>
+          </li>
+          <li class="spec-item" data-kw="4" tabindex="0">
+            <svg class="icon"><use href="#i-owner"/></svg>
+            <h3>Quem é o dono</h3>
+            <p>Quem responde pelo agente no dia a dia e acompanha o resultado.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AGENDA: régua proporcional da manhã ===== -->
+  <section class="section section-band" id="agenda">
+    <div class="wrap">
+      <div class="agenda-head reveal">
+        <h2>Uma manhã, das 8h30 às 12h30</h2>
+        <p>Sete momentos, do café ao networking.</p>
+      </div>
+
+      <ol class="sessions">
+        <li class="reveal">
+          <div class="session" tabindex="0">
+            <time>8h30 <span>a 9h00</span></time>
+            <h3>Welcome &amp; Connect</h3>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="session" tabindex="0">
+            <time>9h00 <span>a 9h20</span></time>
+            <h3>The AI Opportunity</h3>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="session" tabindex="0">
+            <time>9h20 <span>a 9h35</span></time>
+            <h3>Inside the Agent <em class="tag">Demo ao vivo</em></h3>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="session session-key" tabindex="0">
+            <time>9h35 <span>a 11h05</span></time>
+            <h3>Step by Step <em class="tag tag-strong">Construção de agentes</em></h3>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="session" tabindex="0">
+            <time>11h05 <span>a 11h35</span></time>
+            <h3>Executive Exchange</h3>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="session" tabindex="0">
+            <time>11h35 <span>a 12h05</span></time>
+            <h3>From Innovation to Impact</h3>
+          </div>
+        </li>
+        <li class="reveal">
+          <div class="session" tabindex="0">
+            <time>12h05 <span>a 12h30</span></time>
+            <h3>Closing &amp; Networking</h3>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== PALESTRANTE ===== -->
+  <section class="section section-tight" id="anfitrioes">
+    <div class="wrap">
+      <article class="speaker reveal">
+        <figure class="speaker-photo">
+          <img src="assets/leandro-dante.jpg" width="800" height="1000" loading="lazy" decoding="async" alt="Leandro Dante falando ao microfone em um palco">
+          <figcaption>Palestrante</figcaption>
+        </figure>
+        <div class="speaker-body">
+          <h2>Quem conduz a manhã</h2>
+          <p class="speaker-name">Leandro Dante</p>
+          <p class="speaker-title">SAP Business AI Specialist</p>
+          <p class="speaker-bio">Referência em SAP BTP no Brasil, lidera a maior comunidade de SAP BTP do país e leva esse conteúdo a eventos nacionais e internacionais. Em projetos de grande porte, o foco dele é <strong>Clean Core, IA aplicada e Integração Inteligente</strong>: o mesmo terreno em que o seu agente vai nascer nesta manhã.</p>
+          <ul class="speaker-creds" aria-label="Especialidades e certificações">
+            <li>SAP Solution Architect</li>
+            <li>SAP BTP Architect</li>
+            <li>SAP BDC Architect</li>
+            <li class="cred-key">5x SAP Certified</li>
+          </ul>
+          <a class="host-link" href="https://www.linkedin.com/in/leandrodante/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            Ver perfil no LinkedIn
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== LAB2DEV: quem recebe o evento ===== -->
+  <section class="section section-band" id="lab2dev">
+    <div class="wrap">
+      <div class="house reveal">
+        <div class="house-body">
+          <h2>Quem recebe você: <span>a Lab2dev</span></h2>
+          <p class="house-lead">Your Intelligent Agent Partner. Referência em inovação SAP no Brasil, a Lab2dev ajuda empresas a colocar IA, automação e Clean Core para funcionar sobre o SAP, do desenho ao resultado.</p>
+          <ul class="house-areas">
+            <li><svg class="icon icon-sm"><use href="#i-target"/></svg>SAP Business AI e agentes</li>
+            <li><svg class="icon icon-sm"><use href="#i-data"/></svg>SAP BTP e integração</li>
+            <li><svg class="icon icon-sm"><use href="#i-rule"/></svg>Clean Core</li>
+            <li><svg class="icon icon-sm"><use href="#i-play"/></svg>Automação e produtos próprios, como o Code Advisor</li>
+          </ul>
+          <div class="house-foot">
+            <span class="house-partner">
+              <img src="assets/sap-gold-partner.svg" alt="SAP Gold Partner" width="98" height="57">
+              SAP Gold Partner
+            </span>
+            <a class="house-link" href="https://lab2dev.com" target="_blank" rel="noopener">Conhecer a Lab2dev <svg class="icon icon-sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <figure class="house-photo">
+          <img src="assets/equipe-lab2dev.jpg" width="900" height="992" loading="lazy"
+               alt="Equipe da Lab2dev reunida ao redor de um balcão com o logo lab2dev em um evento">
+          <figcaption>O time que vai estar com você nas mesas</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSCRIÇÃO: o ingresso completo ===== -->
+  <section class="section signup" id="inscricao">
+    <div class="wrap">
+      <div class="ticket ticket-signup reveal">
+        <div class="ticket-paper">
+        <div class="ticket-stub signup-stub">
+          <h2>Garanta sua vaga no AI in Action</h2>
+          <p>As vagas são limitadas. Depois da inscrição, nosso time confirma a sua participação.</p>
+          <ul class="signup-facts">
+            <li><svg class="icon icon-sm"><use href="#i-calendar"/></svg>Quarta, 11 de novembro</li>
+            <li><svg class="icon icon-sm"><use href="#i-clock"/></svg>9h às 12h30</li>
+            <li class="signup-address">
+              <svg class="icon icon-sm"><use href="#i-pin"/></svg>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Hil%C3%A1rio%20Pereira%20de%20Souza%2C%20406%2C%20Osasco%20-%20SP%2C%2006010-170" target="_blank" rel="noopener">
+                Presencial, na Lab2dev
+                <span>Torre 02, Av. Hilário Pereira de Souza, 406, 27º andar<br>Industrial Autonomistas, Osasco - SP, 06010-170</span>
+              </a>
+            </li>
+          </ul>
+          <div class="partner-chip">
+            <img src="assets/sap-gold-partner.svg" alt="SAP Gold Partner" width="98" height="57">
+            <span>A <strong>Lab2dev</strong> é SAP Gold Partner</span>
+          </div>
+        </div>
+        <div class="ticket-body signup-form">
+          <div id="formulario-evendo-11-de-novembro-11ae1befc861333096b4" role="main"></div>
+          <script>
+            // Carrega o formulário do RD Station só quando o visitante se aproxima da inscrição,
+            // sem bloquear o carregamento do resto da página.
+            (function () {
+              var formId = 'formulario-evendo-11-de-novembro-11ae1befc861333096b4';
+              var box = document.getElementById(formId);
+              var loaded = false;
+              function loadForm() {
+                if (loaded) return;
+                loaded = true;
+                var s = document.createElement('script');
+                s.src = 'https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js';
+                s.async = true;
+                s.onload = function () { new RDStationForms(formId, 'null').createForm(); };
+                document.body.appendChild(s);
+              }
+              if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                  if (entries[0].isIntersecting) { io.disconnect(); loadForm(); }
+                }, { rootMargin: '800px 0px' });
+                io.observe(box);
+              } else {
+                loadForm();
+              }
+            })();
+          </script>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand-row">
+      <img class="partner-badge" src="assets/sap-gold-partner.svg" alt="SAP Gold Partner" width="98" height="57">
+      <a href="#top" class="brand-lockup" aria-label="Lab2dev">
+        <img class="brand-logo" src="assets/lab2dev-logo.svg" alt="lab2dev">
+      </a>
+    </div>
+    <nav class="footer-links">
+      <a href="#agente">O que você constrói</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#anfitrioes">Palestrante</a>
+      <a href="#lab2dev">Lab2dev</a>
+    </nav>
+    <span class="footer-copy">© 2026 Lab2dev. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<a href="#top" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">
+  <svg class="icon"><use href="#i-arrow"/></svg>
+</a>
+
+<a href="https://wa.me/5511945263748?text=Ol%C3%A1!%20Tenho%20interesse%20no%20AI%20in%20Action%20do%20dia%2011%20de%20novembro." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar com a Lab2dev no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  <span class="whatsapp-label">Fale com a gente</span>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
